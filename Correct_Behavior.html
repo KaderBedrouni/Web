@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <select id='select'>
+        <option value=''></option>
+        <option value='Ardvark'>A</option>
+        <option value='Baboon'>B</option>
+        <option value='Cat'>C</option>
+    </select>
+    <button id='loadButton' onclick='loadSelection()'>Load</button>
+</p>
+<p>
+    <button id='clearButton' onclick='clearInput()'>Clear</button>
+</p>
+<p>
+    <input id='input' type='text'/>
+</p>
+</body>
+
+<script>
+    loadSelection = () => {
+        const selectedValue = document.getElementById('select').value
+        document.getElementById('input').value =
+            selectedValue === '' ? document.getElementById('input').value : selectedValue
+    }
+    clearInput = () => {
+        document.getElementById('select').selectedIndex = 0;
+        document.getElementById('input').value = '';
+    }
+</script>
